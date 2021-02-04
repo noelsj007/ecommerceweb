@@ -1,0 +1,373 @@
+{% extends 'index.html' %}
+<html>
+    {% block content %}
+<head>
+    <script type="text/javascript">
+    function total(){
+      var a = document.getElementById("htotal").value;
+      var b = document.getElementById("ctotal").value;
+      var c = document.getElementById("btotal").value;
+      var d = document.getElementById("ntotal").value;
+      var e = document.getElementById("etotal").value;
+      var f = document.getElementById("ptotal").value;
+      var g = document.getElementById("stotal").value;
+      var h = document.getElementById("ltotal").value;
+      var total = (a-b-c-d-e-f-g-h)*-1;
+      document.getElementById('total').value = total;
+    }
+    function homef(){
+        var checkBox = document.getElementById("home");
+        var homedata = document.getElementById("slp1");
+        var total = document.getElementById("htotal");
+        if (checkBox.checked == true){
+            homedata.value = 'SELECTED';
+            total.value = total.value + 1000;
+        }
+        else{
+          homedata.value = '';
+          total.value = total
+        }
+    }
+    function contactf(){
+      var checkBox = document.getElementById("contact");
+      var contactdata = document.getElementById("slp2");
+      var total = document.getElementById("ctotal");
+      if (checkBox.checked == true){
+        contactdata.value = 'SELECTED';
+        total.value = total.value + 1000;
+      }
+      else{
+        contactdata.value = '';
+        total.value = total;
+      }
+    }
+    function blogf(){
+      var checkBox = document.getElementById("blog");
+      var blogdata = document.getElementById("slp3");
+      var total = document.getElementById("btotal");
+      if (checkBox.checked == true){
+        blogdata.value = 'SELECTED';
+        total.value = total.value + 500;
+      }
+      else{
+        blogdata.value = '';
+        total.value = total;
+      }
+    }
+    function newsf(){
+      var checkBox = document.getElementById("news");
+      var newsdata = document.getElementById("slp4");
+      var total = document.getElementById("ntotal");
+      if (checkBox.checked == true){
+        newsdata.value = 'SELECTED';
+        total.value = total.value + 500;
+      }
+      else{
+        newsdata.value = '';
+        total.value = total;
+      }
+    }
+    function eventf(){
+      var checkBox = document.getElementById("events");
+      var eventdata = document.getElementById("slp5");
+      var total = document.getElementById("etotal");
+      if (checkBox.checked == true){
+        eventdata.value = 'SELECTED';
+        total.value = total.value + 1000;
+      }
+      else{
+        eventdata.value = '';
+        total.value = total;
+      }
+    }
+    function productf(){
+      var checkBox = document.getElementById("product");
+      var productdata = document.getElementById("slp6");
+      var total = document.getElementById("ptotal");
+      if (checkBox.checked == true){
+        productdata.value = 'SELECTED';
+        total.value = total.value + 1000;
+      }
+      else{
+        productdata.value = '';
+        total.value = total;
+      }
+    }
+    function shopf(){
+      var checkBox = document.getElementById("shop");
+      var shopdata = document.getElementById("slp7");
+      var total = document.getElementById("stotal");
+      if (checkBox.checked == true){
+        shopdata.value = 'SELECTED';
+        total.value = total.value + 7000;
+      }
+      else{
+        shopdata.value = '';
+        total.value = total;
+      }
+    }
+    function loginf(){
+      var checkBox = document.getElementById("login");
+      var logindata = document.getElementById("slp8");
+      var total = document.getElementById("ltotal");
+      if (checkBox.checked == true){
+        logindata.value = 'SELECTED';
+        total.value = total.value + 2000;
+      }
+      else{
+        logindata.value = '';
+        total.value = total;
+      }
+    }
+    </script>
+    <style>
+    .body{
+        background-color: #4D4D4D;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+      }
+      
+      .price {
+        color: grey;
+        font-size: 22px;
+      }
+      
+      .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+      
+      .card button:hover {
+        opacity: 0.7;
+      }
+      .form-style-5{
+	max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 10px auto;
+	padding: 20px;
+	background: #f4f7f8;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-5 fieldset{
+	border: none;
+}
+.form-style-5 legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+.form-style-5 label {
+	display: block;
+	margin-bottom: 8px;
+}
+.form-style-5 input[type="text"],
+.form-style-5 input[type="date"],
+.form-style-5 input[type="datetime"],
+.form-style-5 input[type="email"],
+.form-style-5 input[type="number"],
+.form-style-5 input[type="search"],
+.form-style-5 input[type="time"],
+.form-style-5 input[type="url"],
+.form-style-5 textarea,
+.form-style-5 select {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+.form-style-5 input[type="text"]:focus,
+.form-style-5 input[type="date"]:focus,
+.form-style-5 input[type="datetime"]:focus,
+.form-style-5 input[type="email"]:focus,
+.form-style-5 input[type="number"]:focus,
+.form-style-5 input[type="search"]:focus,
+.form-style-5 input[type="time"]:focus,
+.form-style-5 input[type="url"]:focus,
+.form-style-5 textarea:focus,
+.form-style-5 select:focus{
+	background: #d2d9dd;
+}
+.form-style-5 select{
+	-webkit-appearance: menulist-button;
+	height:35px;
+}
+.form-style-5 .number {
+	background: #1abc9c;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]
+{
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #1abc9c;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 100%;
+	border: 1px solid #16a085;
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover
+{
+	background: #109177;
+}
+      </style>
+</head>
+<body>
+    
+<div style="display: inline-block; width: 150%; " class="card">
+    <img src="/media/home.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>HOME PAGE</h1>
+    <p class="price">Rs 1000</p>
+    <p>STUNNING HOME PAGE MAKE YOUR WEBPAGE ATTRACTIVE</p>
+    <p style="background-color: black; font: x-small;color: white;"><input aria-selected="true" type="checkbox" id="home"  onclick="homef()">SELECT THIS</p>
+  </div>
+
+  <div style="display: inline-block;" class="card">
+    <img src="/media/cont.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>CONTACT PAGE</h1>
+    <p class="price">Rs 1000</p>
+    <p>CONTACT PAGE HELPS YOU TO GET IN TOUCH WITH YOUR COSTUMERS</p>
+    <p style="background-color: black; font: x-small;color: white;"><input aria-selected="true" type="checkbox" id="contact" onclick="contactf()">SELECT THIS</p>
+  </div>
+  <div style="display: inline-block;" class="card">
+    <img src="/media/blog.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>BLOG</h1>
+    <p class="price">Rs 500</p>
+    <p>A BLOG HELPS YOUR COUSTOMRS TO DISCOVER YOUR NEW PRODUCT</p>
+    <p style="background-color: black; font: x-small;color: white;"><input id="blog" type="checkbox" onclick="blogf()" name="blog">SELECT THIS</p>
+  </div>
+  <div style="display: inline-block;" class="card">
+    <img src="/media/news.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>NEWS</h1>
+    <p class="price">Rs 500</p>
+    <p>NEWS PAGE HELPS YOU TO MAKE YOUR CUSTOMERS UPDATED</p>
+    <p style="background-color: black; font: x-small;color: white;"><input id="news" type="checkbox" onclick="newsf()" name="news">SELECT THIS</p>
+  </div>
+  <div style="display: inline-block;" class="card">
+    <img src="/media/event.jfif" alt="Denim Jeans" style="width:100%">
+    <h1>EVENTS</h1>
+    <p class="price">Rs 1000</p>
+    <p>EVENT PAGE HELPS YOU TO ORGANIZE NEW EVENTS FOR YOUR CLIENTS</p>
+    <p style="background-color: black; font: x-small;color: white;"><input id="events" type="checkbox" onclick="eventf()" name="event">SELECT THIS</p>
+  </div>
+  <div style="display: inline-block;" class="card">
+    <img src="/media/sp.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>PRODUCT</h1>
+    <p class="price">Rs 1000</p>
+    <p>THIS HELPS YOU TO FEATURE YOUR MAIN PRODUCT TO ATTRACT YOUR CLIENTS</p>
+    <p style="background-color: black; font: x-small;color: white;"><input id="product" type="checkbox" onclick="productf()" name="fproduct">SELECT THIS</p>
+  </div>
+  <div style="display: inline-block;" class="card">
+    <img src="/media/shop.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>SHOP</h1>
+    <p class="price">Rs 7000</p>
+    <p>HELPS YOU TO INTRODUCE YOUR PRODUCTS TO YOUR CUSTOMERS TO INCREASE SALE</p>
+    <p style="background-color: black; font: x-small;color: white;"><input id="shop" type="checkbox" onclick="shopf()" name="shop">SELECT THIS</p>
+  </div>
+  <div style="display: inline-block;" class="card">
+    <img src="/media/login.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>LOGIN PAGE</h1>
+    <p class="price">Rs 2000</p>
+    <p>LOGIN PAGE HELPS TO GETIN TOUCH WITH YOUR CUSTOMERS AND SECURE YOUR WEBSITE</p>
+    <p style="background-color: black; font: x-small;color: white;"><input id="login" type="checkbox" onclick="loginf()" name="login">SELECT THIS</p>
+  </div>
+  <div>
+      <br>
+      <br>
+      {% if user.is_authenticated %}
+      <div class="form-style-5" style="display: inline-block;">
+        <form method="POST" action="{% url 'Dproduct' %}">
+          {% csrf_token %}
+        <fieldset>
+        <legend><span class="number">1</span> Your Details</legend>
+        <input required type="text" name="phone" placeholder="Phone :">
+        <input required type="email" name="email" placeholder="Your Email *">
+        <input required type="text" name="domain" placeholder="Domain *">
+        <div>
+        <a target="_blank" rel="noopener noreferrer" href='https://in.godaddy.com/offers/domains/imc?isc=gofibin01&msclkid=683dfe837bc91e90e5d2a1765248467a&utm_source=bing&utm_medium=cpc&utm_campaign=en-in_corp-plus_sem_bh_b_x_new_x_pros_intl_x_001&utm_term=godaddy&utm_content=GD%20Corp%3ECore&gclid=CL6ZwIiqhu4CFcvChAAdSAUL3Q&gclsrc=ds'><p style="color: black;"><b>DO YOU WANT TO BUY A DOMAIN?..</b></p></a>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend><span class="number">2</span>SELECTED PRODUCT</legend>
+              <input type="text" id="slp1" placeholder="HOME PAGE" name="product1" value="">
+        <input type="text" id="slp2" placeholder="CONTACT PAGE" name="product2" value="">
+        <input type="text" id="slp3" placeholder="BLOG PAGE" name="product3" value="">
+        <input type="text" id="slp4" placeholder="NEWS PAGE" name="product4" value="">
+        <input type="text" id="slp5" placeholder="EVENT PAGE" name="product5" value="">
+        <input type="text" id="slp6" placeholder="PRODUCT PAGE" name="product6" value="">
+        <input type="text" id="slp7" placeholder="SHOP PAGE" name="product7" value="">
+        <input type="text" id="slp8" placeholder="LOGIN PAGE" name="product8" value="">
+        
+        </fieldset>
+        <fieldset>
+        <legend><span class="number">3</span>TOTAL</legend>
+        <input required type="number" id="total" placeholder="Total Amount" name="price">
+        </fieldset>
+        <input type="submit" value="GO TO CHECKOUT" />
+      </div>
+        </form>
+        <div class="form-style-5" style="display: inline-block; ">
+          <fieldset>
+            <legend><span class="number">4</span>SUB TOTAL</legend>
+            <input type="number" id="htotal" placeholder="HOME PAGE Rs 0" name="hprice">
+            <input type="number" id="ctotal" placeholder="CONTACT PAGE Rs 0" name="cprice">
+            <input type="number" id="btotal" placeholder="BLOG PAGE Rs 0" name="bprice">
+            <input type="number" id="ntotal" placeholder="NEWS PAGE Rs 0" name="nprice">
+            <input type="number" id="etotal" placeholder="EVENTS PAGE Rs 0" name="eprice">
+            <input type="number" id="ptotal" placeholder="PRODUCTS PAGE Rs 0" name="pprice">
+            <input type="number" id="stotal" placeholder="SHOP PAGE Rs 0" name="sprice">
+            <input type="number" id="ltotal" placeholder="LOGIN PAGE Rs 0" name="lprice">
+            </fieldset>
+            <div style="padding-top: 430px;">
+            <input type="submit" onclick="total()" value="CALCULATE TOTAL" />
+          </div>
+        </div>
+        
+{% endif %}
+  </div>
+  </body>
+  {% endblock %}
+  </html>

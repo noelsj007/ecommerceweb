@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <body>
+
+        <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            th, td {
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even){background-color: #f2f2f2}
+            
+            th {
+              background-color: #4CAF50;
+              color: white;
+            }
+            </style>
+
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Ordered Date</th>
+                <th>Expected Delivery Date</th>
+                <th>Total Price</th>
+                
+                
+            </tr>
+
+            {% for order in order %}
+            <tr>
+                <td><img src={{order.order_image.url}} width="150px" height="150px" alter="product Image"></td>
+                <td>{{order.order_name}}</td>
+                <td>{{order.order_quantity}}</td>
+                <td>{{order.order_ordered_date}}</td>
+                <td>{{order.order_delivery_date}}</td>
+                <td>{{order.order_total_price}}</td>
+            
+            </tr>
+            
+            {% endfor %}
+        </table> 
+
+        <br><br><br><br><br><br><br><br><br><br>
+    </body>
+{% endblock %}

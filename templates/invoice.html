@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Conformation page</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+
+                table {
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+                
+                th, td {
+                  text-align: left;
+                  padding: 8px;
+                }
+                
+                tr:nth-child(even){background-color: #f2f2f2}
+                
+                th {
+                  background-color: #4CAF50;
+                  color: white;
+                }
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='header'>
+                <p class='title'><h1></h1>NSJ GROUP  Pvt Ltd.</h1></p>
+            </div>
+        <div class="invoice">
+            <div align="right">
+                Invoice Number: R00236474723288<br>
+                Ordered Date: {{ordered_date}}  <br>
+            </div>
+            <hr>
+    <table>        
+        <tr>
+        <th>
+                <h2>Billing Information</h2>
+        </th>
+        
+        <th>
+                <h2>Shipping Information</h2>
+        </th>
+        </tr>
+
+        <tr>
+        <td>
+                <h4>
+                    Product publisher:
+                </h4>
+                <p>{{publisher}}</p>
+                
+
+                <h4>
+                    Customer Name:
+                </h4>
+                <p>{{user_name}}</p>
+
+                <h4>
+                    Billing Address:
+                </h4>
+                <p>{{billing_address}}</p>
+
+                <h4>
+                    Email:
+                </h4>
+                <p>{{email}}</p>
+            
+        </td>        
+        <td>        
+            <h4>
+                Product publisher:
+            </h4>
+            <p>{{publisher}}</p>
+            
+
+            <h4>
+                Receiver Name:
+            </h4>
+            <p>{{user_name}}</p>
+
+            <h4>
+                Phone Number:
+            </h4>
+            <p>{{phone_number}}</p>
+
+            <h4>
+                Shipping Address:
+            </h4>
+            <p>{{order_address}}</p>
+            <h4>
+                Domain Name:
+            </h4>
+            <p>{{domain_name}}</p>
+            <h4>
+                Purchase Status:
+            </h4>
+            <p>{{paymentstatus}}</p>
+
+
+           
+
+        </td>
+        </tr>
+        </table>
+        <hr>
+
+        <table>
+            <tr>
+                <th>S.no</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>{{product_name}}</td>
+                <td>{{quantity}}</td>
+                <td>{{total_price}} /-</td>
+            </tr>
+        </table>
+        <hr>
+
+        <h4>
+            Expected Delivery: {{delivery_date}}
+            
+        </h4>
+
+            <br>
+            <br>
+            <hr>
+        <div>
+            <p>
+                TERMS AND CONDITIONS<br>
+                1. The Payment Option will enable once The website is Hosted, The admin details will Hand over once the payment complete<br>
+                2. The Seller warrants the product for one (1) year from the date of purchase.<br>
+                3. Any purchase order received by the seller will be interpreted as accepting this offer and the sale offer in writing.  
+                  </p>
+        </div>
+    </body>
+</html>

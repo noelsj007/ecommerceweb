@@ -1,0 +1,144 @@
+{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSJ GROUP</title>
+</head>
+<body>
+    {% block content %}
+
+    <style>
+       body{
+          margin:0;
+          padding:0;
+          background-color: #3C3C3C;
+          font-family: sans-serif;
+           }
+      .log{  width:1366px;
+          height:800px;
+
+          }
+      .loginbox{  width: 650px;
+          height: 1000px;
+          background: #242424;
+          color: #fff;
+          top:8%;
+          left:30%;
+          bottom: 5%;
+          position:absolute;
+          transform: translate (-50%,-50%);
+          box-sizing: border-box;
+          padding: 70px 30px;
+          opacity: .7 ;
+               }
+      h1{    margin:0;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 30px;
+          font-family:AR JULIAN;
+          color:red;
+        }
+      .loginbox p{  margin:0;
+          padding: 0;
+          font-weight:bold;
+                 }
+      .loginbox input{width: 100%;
+          margin-bottom:20px;
+                     }
+      .loginbox input[type="text"], input[type="password"], input[type="email"], input[type=""]{
+          border: none;
+          border-bottom: 1px solid #fff;
+          background: transparent;
+          outline:none;
+          height:40px;
+          color:#fff;
+          font-size:16px;
+              }
+      .loginbox input[type="radio"]{
+          border: none;
+          background: transparent;
+      }
+      .loginbox input[type="submit"]{
+          border: none;
+          outline:none;
+          height:40px;
+          background:#fb2525;
+          color: #fff;
+          font-size:18px;
+          border-radius:20px;
+              }
+      .loginbox input[type="submit"]:hover
+      {    cursor:pointer;
+          background:#ffc107;
+          color:#000;
+      }
+      .loginbox a{
+          text-decoration:none;
+          font-size:12px;
+          line-height:20px;
+          color: darkgrey;
+      }
+      .loginbox a:hover
+      {
+        color:#ffc107;
+      }
+      .active{
+        color:#fff;
+        background:#e02626;
+        border-radius:4px;
+      }
+      .loginbox input[type="radio"]{
+          display: inline;
+      }
+
+    </style>
+    <center>
+    <div class="loginbox">
+    <form action="{% url "Register" %}" method="POST">
+        {% csrf_token %}
+
+        <center>
+            <h1>Signup</h1>
+            <input type="text" value="" name="Candidate_Name" placeholder="Username">
+            <input type="email" value="" name="Candidate_Emailid" placeholder="Email">
+            <p style="float: left;"><u>Gender</u></p><br><br>
+    
+            <p style="float: left; padding-left: 220px;">Male   :</p><input  style="padding-bottom: 10px;"  type="radio" value="Male" name="Candidate_Gender" placeholder="Gender" id="gender">
+            <p style="float: left; padding-left: 220px;">Female:</p><input  style="display: inline;"  type="radio" value="Female" name="Candidate_Gender" placeholder="Gender" id="gender">
+            <p style="float: left; padding-left: 220px;">Others:</p><input style="display: inline;" type="radio" value="Others" name="Candidate_Gender" placeholder="Gender" id="gender">
+
+            <input type="text" value="" name="Candidate_DOB" placeholder="dd/mm/yyyy">
+            <input type="" value="" name="Candidate_Phonenumber" placeholder="Phone number">
+            <input type="text" value="" name="Candidate_Adderss" placeholder="Enter your current address">
+            <input type="text" value="" name="Candidate_City" placeholder="City">
+            <input type="text" value="" name="Candidate_State" placeholder="State">
+            <input type="password" value="" name="Candidate_Password" placeholder="password">
+            <input type="password" value="" name="Candidate_Conformpassword" placeholder="Conform password">
+            <input type="submit" value="SignUp" name="AccountSignup"><br>
+        </center>
+    </form>
+    
+<div>
+    <center>
+        <br>
+        Already have an account, <a href="{% url "Login" %}">Login</a> here
+        <br><br>
+
+    </center>
+</div>
+
+</div>
+
+<div>
+    {% for message in messages %}
+        <h3>
+            Note : {{message}}
+        </h3>
+    {% endfor %}
+</div>
+</center>
+{% endblock %}
+</body>
+</html>

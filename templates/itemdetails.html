@@ -1,0 +1,110 @@
+{% extends 'index.html' %}
+<html>
+<head>
+</head>
+{% block content %}
+<main style="  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;" class="container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div style="  width: 65%;
+  position: relative;" class="left-column">
+    <img style="  width: 100%;
+  position: absolute;
+  left: -40px;
+  right: 10px;
+  top: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+  opacity: 1;" data-image="black class="active" src="{{item.item_image.url}}" alt="">
+   </div>
+ 
+ 
+  <!-- Right Column -->
+  <div style="  width: 35%;
+  margin-top: 60px;" class="right-column">
+ 
+    <!--  Product Description -->
+    <div style="  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 10px;" class="product-description">
+      <h1>{{item.item_name}}</h1>
+      <h3 >More Informations:</h3>
+      <p style="  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;">{{item.item_description}}</p>
+    </div>
+ 
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+ 
+      <!-- Product Color -->
+      <div style=" margin-bottom: 30px;" class="product-color">
+        <span>Country of Origin: {{item.item_origin}}</span>
+    </div>
+ 
+    <!-- Product Pricing -->
+    <div style="  display: flex;
+  align-items: center;" class="product-price">
+      <span style="  font-size: 26px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 20px;" >Rs.{{item.item_price}}</span>
+
+{% if user.is_authenticated %}
+<a  style="  display: inline-block;
+background-color: #7DC855;
+border-radius: 6px;
+font-size: 16px;
+color: #FFFFFF;
+text-decoration: none;
+padding: 12px 30px;
+transition: all .5s;"  href="{% url 'buynow' item.id user.id %}">Buy Now</a>
+
+<a  style="  display: inline-block;
+background-color: #7DC855;
+border-radius: 6px;
+font-size: 16px;
+color: #FFFFFF;
+text-decoration: none;
+padding: 12px 30px;
+transition: all .5s;"  href="{% url 'addtocart' user.id item.id %}">ADD TO CART</a>
+
+{% else %}
+<a  style="  display: inline-block;
+background-color: #7DC855;
+border-radius: 6px;
+font-size: 16px;
+color: #FFFFFF;
+text-decoration: none;
+padding: 12px 30px;
+transition: all .5s;"  href="{% url 'buynow' %}">Buy Now</a>
+
+<a  style="  display: inline-block;
+background-color: #7DC855;
+border-radius: 6px;
+font-size: 16px;
+color: #FFFFFF;
+text-decoration: none;
+padding: 12px 30px;
+transition: all .5s;"  href="{% url 'addtocart_inactiveuser' %}">ADD TO CART</a>
+{% endif %}
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+            
+
+
+            </td>
+            </div>
+            </tr>
+
+        
+    </table>
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block content %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+  </head>
+
+  <body>
+    {% if user.is_authenticated %}
+
+    <center>
+<div style="padding-top: 20%;" class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_GVYOZbW1SvNig9/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
+    <script>
+      (function(){
+        var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+        if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+        s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+        rzp && rzp.init && rzp.init()}})();
+    </script>
+  </div>
+</center>  
+{% else %}
+<p style="padding-left: 10%; padding-top: 10%; color: black;"><h2>Plaese Login To Your Account!!</h2></p>
+<a href="/accounts/login/" class="btn btn-warning">Login</a>
+{% endif %}
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,392 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSJ GROUP</title>
+
+
+</head>
+<!--
+<script>
+  $(function() {
+     $('#nav li a').click(function() {
+        $('#nav li').removeClass();
+        $($(this).attr('href')).addClass('active');
+     });
+  });
+</script>
+
+-->
+<style>
+    .footer {
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        background-color: cornflowerblue;
+        color: white;
+        text-align: center;
+        
+    }
+    .column {
+        float: left;
+        width: 20%;
+        padding: 30px;
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #343A40;
+      }
+      
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #264cf1;
+        color: white;
+      }
+      
+      .topnav a.active {
+        background-color: #264cf1;
+        color: white;
+      }
+
+      .dropdown {
+        float: right;
+        overflow: hidden;
+        padding-right: 5%;
+      }
+      
+      .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        font-size: 17px;
+        margin: 0;
+      }
+      
+      .dropdown:hover .dropbtn {
+        background-color: red;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }      
+
+      .auth {
+          float: right;
+      }
+
+      .topnav input[type=text] {
+        float: left;
+        padding: 6px;
+        margin-top: 8px;
+        padding-left: 16px;
+        border: none;
+        font-size: 17px;
+        width: 50%;
+        
+      }
+      
+      @media screen and (max-width: 600px) {
+        .topnav a, .topnav input[type=text] {
+          float: none;
+          display: block;
+          text-align: left;
+          width: 100%;
+          margin: 0;
+          padding: 14px;
+        }
+        
+        .topnav input[type=text] {
+          border: 1px solid #ccc;  
+        }
+      }
+      
+.btn-primary {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #2D9CDB;
+}
+
+body{
+	background-color: #3C3C3C(0, 0%, 100%);
+}
+
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 30%);
+}
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.thumbnail{
+	width: 100%;
+	height: 100%px;
+	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+}
+
+.product{
+	border-radius: 0 0 4px 4px;
+}
+
+.bg-dark{
+	background-color: #4D4D4D!important;
+}
+
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#cart-total{
+	display: block;
+	text-align: center;
+	color:#fff;
+	background-color: red;
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
+
+.btn{
+	border-radius: 0;
+}
+
+.cart-item-image{
+	width: 100px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:0px;
+
+
+}
+
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+.hidden{
+	display: none!important;
+}
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 200%;
+  height: 150%;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 73%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(43, 43, 43);
+  color: white;
+  font-size: 20px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: green;
+}
+
+.container .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #fff4f4; /* Grey text */
+  width: 194%; /* Full width */
+  padding: 20px; /* Some padding */
+}
+      </style>
+
+
+<body>
+    <section >
+        {% block topnav %}
+        <div class="topnav" id="nav">
+            <a class="active" href="{% url "home" %}">NSJ GROUP</a>
+            <a href="{% url "Aboutus" %}">Contact Us</a>
+           
+            <a href="{% url "index" %}">Shop</a>
+            <a href="{% url "Mainpayment" %}">Payments</a>
+        {% endblock %}
+        <form method="POST" action="{% url "searchbar" %}">
+          {% csrf_token %}
+            <input type="text" value="" name="searchbar"  placeholder="Search">
+        </form>
+          
+        {% if user.is_authenticated %}
+            <div class="dropdown">
+                <button class="dropbtn">{{user.username}} &#9660
+                    <i class= "fas fab-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                        
+                        <a href="{% url "orders_view" user.id %}">Orders</a>
+                        <a href="{% url "addtocart_view" user.id %}">Your Cart</a>
+                        <a href="{% url "logout" %}">Logout</a>        
+                </div>
+            </div>
+
+        {% else %}
+        <div class="auth"  align="right">
+            <a href="{% url "Login" %}">Login</a>
+            <a href="{% url "Register" %}">Register</a>
+        </div>
+        </div>    
+        
+        {% endif %}
+
+    </section>
+    </body>
+    <div class="footer">
+
+
+        <br>
+        Copyright © 2021 NSJ GROUP - All Rights Reserved.
+        <br>
+        <br>
+      </div>

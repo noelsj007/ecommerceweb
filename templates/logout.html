@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSJ GROUP</title>
+</head>
+<body>
+
+    
+    
+    {% if not userExists %}
+        <div align="right">
+            <a href="{% url "Login" %}">Login</a>
+            <a href="{% url "Register" %}">Register</a>
+        </div>
+    {% else %}
+        <div align="right">
+            <p>Welcome Account user</p>
+            <a href="{% url "logout" %}">Logout</a>
+        </div>
+    {% endif %}
+    
+
+    {% block content %}
+    <center>
+    <div color>
+        <h1><span style="color:green;">Sucessfully logged out !</span></h1>
+    </div>
+    </center>
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolin</title>
+
+</head>    
+<body>
+    {% block content %}
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2}
+        
+        th {
+          background-color: #4CAF50;
+          color: white;
+        }
+        </style>
+    
+    <!--
+           
+            {% if cart_add_item %}
+            current ID :  {{cart_add_item.id}}<br>
+            <img src="{{cart_add_item.cart_image.url}}" width="250px" height="150px"><br>
+            Name : {{cart_add_item.cart_name}}<br>
+            Quantity : {{cart_add_item.cart_quantity}}<br>
+            <input type="button" value="remove" name="remove">
+            {% endif %}
+
+            <br>
+            {% for cart_all_items in cart_all_items %}
+                <img src="{{cart_all_items.cart_image.url}}" width="250px" height="150px"><br>
+                ID : {{cart_all_items.id}}<br>
+                Name : {{cart_all_items.cart_name}}<br>
+                Quantity : {{cart_all_items.cart_quantity}}<br>
+                <input type="button" value="remove" name="remove">
+                <br>
+            {% endfor %}
+    -->
+    <br>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+            <th>Total Price</th>
+            <th>Order Now</th>
+            
+        </tr>
+        <tr>
+        {% if cart_add_item %}
+        <td><img src="{{cart_add_item.cart_image.url}}" width="250px" height="150px"></td>
+        <td>{{cart_add_item.cart_name}}</td>
+        <td>
+            <a href="{% url "decrease_quantity" cart_add_item.id user.id%}"><img src="/media/minus.jpg" width="10px" height="10px"></a>
+            {{cart_add_item.cart_quantity}}
+            <a href="{% url "increase_quantity" cart_add_item.id user.id %}"><img src="/media/plus.png" width="10px" height="10px"></a>
+            
+        </td>
+        <td><a href="{% url "deleteitem" cart_add_item.id user.id%}"><img src="/media/trashicon.jpg" width="20px" height="20px"></a></td>
+        <td>Rs. {{cart_add_item.cart_total_price}}</td>
+        <td><a href="{% url "buynow_cart" cart_add_item.id user.id %}"><img src="/media/pay.jpg" width="25px" height="25px"></a></td>
+        </tr>
+        {% endif %}
+        
+        {% for cart_all_items in cart_all_items %}
+        <tr>
+            <td><img src=" {{cart_all_items.cart_image.url}} " width="250px" height="150px"></td>
+            <td>{{cart_all_items.cart_name}}</td>
+            <td>
+                <a href="{% url "decrease_quantity" cart_all_items.id user.id%}"><img src="/media/minus.jpg" width="10px" height="10px"></a>
+                {{cart_all_items.cart_quantity}}
+                <a href="{% url "increase_quantity" cart_all_items.id user.id %}"><img src="/media/plus.png" width="10px" height="10px"></a>
+                
+                </td>
+            <td><a href="{% url "deleteitem" cart_all_items.id user.id%}"><img src="/media/trashicon.jpg" width="20px" height="20px"></a></td>
+            <td>Rs. {{cart_all_items.cart_total_price}}</td>
+            <td><a href="{% url "buynow_cart" cart_all_items.id user.id %}"><img src="/media/pay.jpg" width="25px" height="25px"></a></td>
+        </tr>
+        
+        {% endfor %}
+    </table> 
+    <br><br><br><br><br><br><br><br><br>
+    {% endblock %}
+</body>
+
+</html>

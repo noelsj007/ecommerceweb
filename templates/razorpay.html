@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block content %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+  </head>
+
+  <body bgcolor="#4D4D4D">
+    {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'Payment' user.id  %}">
+      {% csrf_token %}
+      <div class="subtotal">
+        <p  class="small"><h2 style="padding-top: 5%; padding-left: 22%; color: black; font-weight: bolder; font-size: 300%;">Choose Your Item Name:</h2></p>
+        <div style="padding-left: 25%; padding-right: 10%;">
+        <select style="padding-left: 10%; padding-top: 2%; padding-bottom: 2%;" name="item_name" id="cars">
+          <option value="Simple Web Design">Simple Web Design</option>
+          <option value="Website with multiple pages">Website with multiple pages</option>
+          <option value="Complex website">Complex website</option>
+          <option value="Website Malware Repair">Website Malware Repair</option>
+          <option value="E-commerce Website">E-commerce Website</option>
+          <option value="Web design (Front-End)">Web design (Front-End)</option>
+          <option value="Web Development(Back-End)">Web Development(Back-End)</option>
+          <option value="Design Your Website">Design your website</option>
+        </select>
+        </div>
+        
+      </div>
+      <div style="padding-top: 1%; padding-left: 28%;">
+      <button style="	margin-top: 1rem;
+      width: 20%;
+      height: 40px;
+      background-color: #000;
+      box-shadow: 0 3px 6px 2px darken(whitesmoke, 10%); " class="btn-go-checkout">
+        <i class="fas fa-lock"></i>
+        <span style="font-size: 1tem; color: blanchedalmond;">Go to Checkout</span>
+      </button>
+    </div>
+    </form> 
+  {% else %}
+  <p style="padding-left: 10%; padding-top: 10%; color: black;"><h2>Plaese Login To Your Account!!</h2></p>
+  <a href="/accounts/login/" class="btn btn-warning">Login</a>
+  {% endif %}
+  </body>
+  {% endblock %}
+</html>
+
+

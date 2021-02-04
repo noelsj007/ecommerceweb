@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+    <body>  
+        
+    <style>
+        .column {
+            float: left;
+            width: 20%;
+            padding: 25px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+    </style>
+    <section>
+        <div class="row">
+            {% for items in items %}
+            <div class="column">
+                <center>
+                <img src="{{items.item_image.url}}" width="250px" height="150px"><br>
+                <a href="{% url "itemdetails" items.id %}" style="text-decoration:red;"><h3>{{items.item_name}}</h3></a>
+                Price : RS.{{items.item_price}} <br>
+                Country of origin : {{items.item_origin}}<br>
+                <br>
+                
+            {% if user.is_authenticated %}
+            
+                <a href="{% url 'buynow' items.id user.id %}"><button>Buy Now</button></a>
+                <a href="{% url 'addtocart' user.id items.id %}"><button>Add to Cart</button></a>
+            
+
+            {% else %}
+                <a href="{% url 'addtocart_inactiveuser' %}"><button>Buy Now</button></a>
+                <a href="{% url 'addtocart_inactiveuser' %}"><button>Add to Cart</button></a>
+
+
+            
+            {% endif %}
+            
+        </center>    
+            </div>
+            {% endfor %}
+            
+        </div>
+
+        
+        </section>
+<br><br><br><br><br><br>
+
+
+</body>
+
+{% endblock %}
+
+
