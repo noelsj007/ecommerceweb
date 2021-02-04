@@ -17,7 +17,7 @@ python-bidi==0.4.2
 python-dateutil==1.5
 pytz==2020.5
 razorpay==1.2.0
-reportlab==3.5.60
+reportlab==3.5.59
 requests==2.25.1
 six==1.15.0
 sqlparse==0.4.1
