@@ -25,7 +25,7 @@ SECRET_KEY = '_3wq_jg3(al)-)_rlf-%w5mv1r5@l(%(6&(82=--zb_ebl82-@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nsjgroup.herokuapp.com' , '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 
