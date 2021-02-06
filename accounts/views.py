@@ -107,7 +107,7 @@ def orders_view(request, userid):
 def addtocart_view(request, userid):                                 # Add to cart all items
     if User.is_authenticated:
         current_user = User.objects.get(pk = userid)
-        cart_all_items = AddToCart.objects.get(cart_useremail= current_user.email )
+        #cart_all_items = AddToCart.objects.get(cart_useremail= current_user.email )
         if AddToCart.objects.filter(cart_useremail= current_user.email).exists():
             cart_all_items = AddToCart.objects.filter(cart_useremail= current_user.email )
             return render(request, 'addtocart.html', {'cart_all_items': cart_all_items})
@@ -147,23 +147,23 @@ def addtocart(request, userid, itemsid):                        # Add to cart cu
                 cart_add_item.cart_quantity += 1
                 cart_add_item.save()
 
-                cart_add_item.cart_quantity += 1
-                cart_add_item.save()
+                #cart_add_item.cart_quantity += 1
+                #cart_add_item.save()
             else:
-                print("1st else part")
+                #print("1st else part")
                 cart_add_item.cart_quantity = 1
                 cart_add_item.save()
 
         else:
-            print("2nd else")
+            #print("2nd else")
             cart_add_item.cart_quantity = 1
             cart_add_item.save()
 
         cart_add_item.cart_total_price = cart_add_item.cart_quantity * cart_add_item.cart_price
         cart_add_item.save()
 
-        cart_add_item.cart_total_price = cart_add_item.cart_quantity * cart_add_item.cart_price
-        cart_add_item.save()
+       # cart_add_item.cart_total_price = cart_add_item.cart_quantity * cart_add_item.cart_price
+        #cart_add_item.save()
 
             
 
@@ -331,7 +331,7 @@ def buynow_cart(request, itemid, userid):           # Buynow button in addtocart
             return render(request, "order.html", {'order': order})
 
         else:
-            ordereditem = Item.objects.get(pk= itemid)
+            #ordereditem = Item.objects.get(pk= itemid)
             order = Order()
             order.order_useremail = login_user.email
             order.order_name = ordereditem.cart_name
