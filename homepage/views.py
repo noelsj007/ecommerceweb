@@ -8,12 +8,12 @@ def index(request):
     items = Item()
     items = Item.objects.all()
     return render(request, 'index.html', {'items': items})
-"""
+
 def show(request):
     items = Item()
     items = Item.objects.all()
     return render(request, 'index.html', {'items':items})
-"""
+
 def Aboutus(request):
     return render(request, 'aboutus.html')
 
@@ -25,11 +25,11 @@ def News(request):
 
 def home(request):
     return render(request, 'home.html')
-"""
+
 def buynow(request):
     text = "Payment gateway will be added soon"
     return render(request, 'buynow.html', {'text' : text})
-"""
+
 def searchbar(request):
     if request.method == "POST":
         search = request.POST['searchbar']
