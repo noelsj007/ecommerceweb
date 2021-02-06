@@ -3,13 +3,13 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 
 # Create your models here.
-
+"""
 GENDER = (
     ('Male', 'Male'),
     ('Female', 'Female'),
     ('Others', 'Others'),
 )
-
+"""
 
 class UserRegister(models.Model):
     user_name = models.CharField(max_length=50)
@@ -26,7 +26,7 @@ class UserRegister(models.Model):
 
 
 
-
+"""
 class UserProfile(models.Model):  
     user = models.ForeignKey(User, unique=True)
     location = models.CharField(max_length=140)  
@@ -36,7 +36,7 @@ class UserProfile(models.Model):
 
     def __unicode__(self):
         return u'Profile of user: %s' % self.user.username
-        
+        """
 
 class AddToCart(models.Model):
     cart_useremail = models.EmailField(default=None)
@@ -96,3 +96,4 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_useremail
+
