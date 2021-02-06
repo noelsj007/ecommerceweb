@@ -317,7 +317,6 @@
   <div>
       <br>
       <br>
-      {% if user.is_authenticated %}
       <div class="form-style-5" style="display: inline-block;">
         <form method="POST" action="{% url 'Dproduct' %}">
           {% csrf_token %}
@@ -366,7 +365,7 @@
           </div>
         </div>
         
-{% endif %}
+
   </div>
   </body>
   {% endblock %}
