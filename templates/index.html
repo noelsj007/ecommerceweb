@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'menu.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +8,7 @@
 
 
 </head>
-<!--
-<script>
-  $(function() {
-     $('#nav li a').click(function() {
-        $('#nav li').removeClass();
-        $($(this).attr('href')).addClass('active');
-     });
-  });
-</script>
 
--->
 <style>
     .footer {
         position: fixed;
@@ -344,46 +334,7 @@ h1,h2,h3,h4,h5,h6{
 
 
 <body>
-    <section >
-        {% block topnav %}
-        <div class="topnav" id="nav">
-            <a class="active" href="{% url "home" %}">NSJ GROUP</a>
-            <a href="{% url "Aboutus" %}">Contact Us</a>
-           
-            <a href="{% url "index" %}">Shop</a>
-            <a href="{% url "Mainpayment" %}">Payments</a>
-        {% endblock %}
-        <form method="POST" action="{% url "searchbar" %}">
-          {% csrf_token %}
-            <input type="text" value="" name="searchbar"  placeholder="Search">
-        </form>
-          
-        {% if user.is_authenticated %}
-            <div class="dropdown">
-                <button class="dropbtn">{{user.username}} &#9660
-                    <i class= "fas fab-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                        
-                        <a href="{% url "orders_view" user.id %}">Orders</a>
-                        <a href="{% url "addtocart_view" user.id %}">Your Cart</a>
-                        <a href="{% url "logout" %}">Logout</a>   
-                        <a href="{% url 'profile' user.id %}">Profile</a>    
-                </div>
-            </div>
-
-        {% else %}
-        <div class="auth"  align="right">
-            <a href="{% url "Login" %}">Login</a>
-            <a href="{% url "Register" %}">Register</a>
-        </div>
-        </div>    
-        
-        {% endif %}
-
-    </section>
-
-    <br>
+   
  
     
     
@@ -396,8 +347,7 @@ h1,h2,h3,h4,h5,h6{
         <div class="content">
           <h2 style="color: honeydew;">DESIGN YOUR WEBSITE WITH US...</h2>
           <p>This is a special product page were you can design how your website appeares.For that we provide lots of templates that you can choose as your wish.According to yourselection we design a completely responsive website attract your costomers.And the main heighlight that the pize starts from just 1000/-<br>
-		1.Guest Users can order this product<br>2.Enter the correct Quote amount. If any change detected we will not accept your quotes. Refund will not allowed</p>
-        </div>
+		1.Guest Users can order this product<br>     </div>
       </div>
     
             {% for items in items %}
