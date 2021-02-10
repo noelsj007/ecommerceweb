@@ -209,6 +209,19 @@ h1,h2,h3,h4,h5,h6{
   width: 194%; /* Full width */
   padding: 20px; /* Some padding */
 }
+	.column {
+        float: left;
+        width: 20%;
+        padding: 30px;
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+
       </style>
 
 
@@ -217,7 +230,7 @@ h1,h2,h3,h4,h5,h6{
     
     
       
-        <section style="background-color: #3C3C3C" >
+        
       <div class="container">
         <img src="/media/sp.png" alt="Snow">
         <a href="{% url 'sproduct' %}"><button class="btn">PURCHASE NOW</button>
@@ -265,7 +278,7 @@ h1,h2,h3,h4,h5,h6{
 
   </div>
         
-    </section>
+    
     <br><br><br><br><br><br>
     {% endblock %}
 
