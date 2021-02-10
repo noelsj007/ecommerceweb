@@ -108,7 +108,7 @@ body {
       }      
 
       .auth {
-          float: right;
+          float: left;
       }
 
 </style>
@@ -137,8 +137,8 @@ body {
 
         {% else %}
         <div class="auth"  align="right">
-            <a href="{% url "Login" %}">Login</a>
-            <a href="{% url "Register" %}">Register</a>
+            <a href="{% url "Login" %}">sign in</a>
+            <a href="{% url "Register" %}">sign up</a>
         </div>
         </div>    
         
