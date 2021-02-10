@@ -150,7 +150,7 @@
 
     <form action="{% url "Register" %}" method="POST">
         {% csrf_token %}
-
+<center>
                 <fieldset>
         <legend><span class="number">1</span> Personal Details Details</legend>
         <input required type="text" name="Candidate_Name" placeholder="Username :">
@@ -171,14 +171,15 @@
             <input type="password" value="" name="Candidate_Password" placeholder="password">
             <input type="password" value="" name="Candidate_Conformpassword" placeholder="Conform password">
             <input type="submit" value="SignUp" name="AccountSignup"><br>
+		<br>
+        Already have an account, <a href="{% url "Login" %}">Login</a> here
+        
         </fieldset>
     </form>
     
 <div>
-    <center>
-        <br>
-        Already have an account, <a href="{% url "Login" %}">Login</a> here
-        <br><br>
+    
+        
 
     </center>
 </div>
