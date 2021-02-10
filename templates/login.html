@@ -151,6 +151,7 @@
 </style>
 
     <body>
+	    <center>
        <div class="form-style-5" style="display: inline-block;">
 
         <form action="{% url "Login" %}" method="POST">
@@ -163,12 +164,13 @@
         <input required type="email" name="password" placeholder="Your Password *">
         <div>
          </div>
-        </fieldset>
-            <input type="submit" value="Login" name="LoginAccount">
+		               <input type="submit" value="Login" name="LoginAccount">
         </form>
             <br>
             Don't have an account, <a href="{% url "Register" %}">Register</a> here<br>
             <br>
+        </fieldset>
+
         </center>
     </div>
     <br>
