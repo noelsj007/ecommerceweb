@@ -122,7 +122,7 @@ body {
     <a href="{% url "index" %}">Shop</a>
     <a href="{% url "Mainpayment" %}">Payments</a>
     {% if user.is_authenticated %}
-          <a href="{% url 'profile' user.id %}">{{user.username}} &#9660</a> 
+          <a href="{% url 'profile' user.id %}">{{user.username}}</a> 
           <a href="{% url "addtocart_view" user.id %}" style="float: right;"><img style=" height: 20px;" src="/media/cart.png"></a>
     {% else %}                       
           <a href="{% url "Login" %}">Sign in</a>
