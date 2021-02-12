@@ -2085,6 +2085,8 @@ p {
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
             {% if user.id %}
             <a href="{% url 'editprofile' user.id %}" class="btn btn-info">Edit profile</a>
+            <a href="{% url 'logout' %}" class="btn btn-info">Logout</a> 
+            <a href="{% url 'orders_view' user.id %}" class="btn btn-info">Orders</a>
             {% else %}
             <a href="{% url '' %}" class="btn btn-info">Goto Home Page</a>
             {% endif %}
