@@ -122,34 +122,13 @@ body {
     <a href="{% url "index" %}">Shop</a>
     <a href="{% url "Mainpayment" %}">Payments</a>
     {% if user.is_authenticated %}
-            <div class="dropdown">
-                <button class="dropbtn">{{user.username}} &#9660
-                    <i class= "fas fab-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                        
-                        <a href="{% url "orders_view" user.id %}">Orders</a>
-                        <a href="{% url "addtocart_view" user.id %}">Your Cart</a>
-                        <a href="{% url "logout" %}">Logout</a>   
-                        <a href="{% url 'profile' user.id %}">Profile</a>    
-                </div>
-            </div>
-
-        {% else %}
-        <div class="dropdown">
-                <button class="dropbtn">User &#9660
-                    <i class= "fas fab-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                        
-                        <a href="{% url "Login" %}">Login</a>
-                        <a href="{% url "Register" %}">Register </a>
-                          
-                </div>
-            </div>
-           
-        
-        {% endif %}
+          <a href="{% url 'profile' user.id %}">{{user.username}} &#9660</a> 
+          <a href="{% url "addtocart_view" user.id %}" style="float: right;"><img style=" height: 20px;" src="/media/cart.png"></a>
+    {% else %}                       
+          <a href="{% url "Login" %}">Sign in</a>
+          <a href="{% url "Register" %}">Sign Up </a>
+          <a href="{% url "Login" %}" style="float: right;"><img style=" height: 20px;" src="/media/cart.png"></a>
+     {% endif %}
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
